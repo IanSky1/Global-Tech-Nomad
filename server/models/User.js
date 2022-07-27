@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 const bcrypt = require("bcrypt");
+const savedJobs = require('./Job')
 
 const userSchema = new Schema(
   {
