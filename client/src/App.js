@@ -1,24 +1,16 @@
-
+import Home from './componets/Home';
+import About from './componets/About'
+import Login from './componets/Login';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Home />
+    <About />
+    <Login />
+    </>
+  
   );
 }
 
