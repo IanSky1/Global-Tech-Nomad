@@ -25,6 +25,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    savedJobs: [savedJobs],
   },
   {
     toJSON: {
@@ -46,6 +47,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 
-module.exports = User
+module.exports = User;
