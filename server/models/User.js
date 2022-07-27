@@ -25,6 +25,8 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+      min: [5, 'Password is too short'],
+      max:[14, 'Password is too long']
     },
     savedJobs: [savedJobs],
   },
