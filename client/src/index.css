@@ -1,13 +1,81 @@
-body {
+/* GLOBAL RULE*/
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/map2.jpg);
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* LOGIN COMPONENT */
+
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginHeader {
+  margin: 20px 0;
+  color: blanchedalmond;
+}
+
+form {
+  text-align: center;
+  background-color: hsla(208deg 100% 48% / 49%);
+  font-size: xx-large;
+  color: blanchedalmond;
+  border: 20px solid blanchedalmond;
+}
+.loginUn{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginUn input{
+  width: 100%;
+  font-size: xx-large;
+}
+
+.loginUn input:hover{
+  width: 100%;
+  background-color: blue;
+  font-size: xx-large;
+}
+
+.loginPw{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginPw input{
+  width: 100%;
+  font-size: xx-large;
+}
+
+.loginPw input:hover{
+  width: 100%;
+  background-color: blue;
+  font-size: xx-large;
+}
+
+.loginSubmit button{
+  margin: 20px;
+  padding: 15px;
+  font-size: x-large;
+}
+
+.loginSubmit button:hover{
+  margin: 20px;
+  padding: 15px;
+  font-size: x-large;
+  background-color: blue;
+}
+
