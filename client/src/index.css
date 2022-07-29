@@ -15,6 +15,26 @@ code {
     monospace;
 }
 
+/* HEADER SECTION*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large;
+  color: blanchedalmond;
+}
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  align-self: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: blanchedalmond;
+}
+
 /* LOGIN COMPONENT */
 
 .login {
