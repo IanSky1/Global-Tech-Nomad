@@ -10,10 +10,12 @@ import About from "./componets/About";
 import Login from "./componets/Login";
 import Header from "./componets/Header";
 import SignUp from './componets/SignUp';
+import Continents from "./componets/Continents";
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: "/countries.trevorblades.com/",
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -33,12 +35,39 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloClient client={client}>
-      <Header />
-      <Home />
-      <About />
-      <Login />
-    </ApolloClient>
+<ApolloProvider client={client}>
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route 
+                path="/" 
+                element={<Home />} 
+              />
+              <Route 
+                path="/login" 
+                element={<Login />} 
+              />
+              <Route 
+                path="/signup" 
+                element={<SignUp />} 
+              />
+              <Route
+                path="/About"
+                element={<About />}
+              />
+              <Route
+                path="/Continents"
+                element={<Continents />}
+              />
+              
+            </Routes>
+          </div>
+
+        </div>
+      </Router>
+    </ApolloProvider>
   );
 }
 
