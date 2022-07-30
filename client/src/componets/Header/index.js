@@ -6,10 +6,10 @@ const Header = () => {
         <div className="header">
             <h1>Global Tech Nomad</h1>
             <nav className="navigation">
-                <a href="/">Home</a>
-                <a href="/">Sign Up</a>
-                <a href="/">About Us</a>
-                <a href="/">Log In</a>
+                <a href="/Home">Home</a>
+                <a href="/SignUp">Sign Up</a>
+                <a href="/About">About Us</a>
+                <a href="/Login">Log In</a>
             </nav>
         </div>
 
