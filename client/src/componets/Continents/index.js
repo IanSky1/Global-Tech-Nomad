@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { QUERY_COUNTRIES } from "../../utils/queries";
 import { useQuery } from "@apollo/client";
 
-const Continents  = () => {
+const Continents = () => {
     const { data } = useQuery(QUERY_COUNTRIES)
     useEffect(() => {
         if (data){
