@@ -13,7 +13,7 @@ type Auth {
     password: String
   }
 
-  type Jobs {
+  type Job {
     _id: ID
     title: String
     description: String

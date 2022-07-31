@@ -5,6 +5,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./componets/Home";
 import About from "./componets/About";
 import Login from "./componets/Login";
@@ -31,12 +32,17 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloClient client={client}>
-      <Header />
-      <Home />
-      <About />
-      <Login />
-    </ApolloClient>
+    <ApolloProvider client={client}>
+      <Router>
+        <Header>
+        <Switch>
+       <Route exact path="/login" component={Login} />
+       <Route exact path="/About" component={About} />
+       <Route exact path="/" component={Home} />
+        </Switch>
+        </Header>
+      </Router>
+    </ApolloProvider>
   );
 }
 
