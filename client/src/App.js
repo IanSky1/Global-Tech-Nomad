@@ -7,6 +7,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./componets/Home";
 import About from "./componets/About";
 import Login from "./componets/Login";
