@@ -6,6 +6,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Home from "./componets/Home";
 import About from "./componets/About";
 import Login from "./componets/Login";
@@ -40,38 +41,19 @@ const client = new ApolloClient({
 function App() {
   return (
 <ApolloProvider client={client}>
-      <Router>
-        <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
-          <div className="container">
-            <Routes>
-              <Route 
-                path="/" 
-                element={<Home />} 
-              />
-              <Route 
-                path="/login" 
-                element={<Login />} 
-              />
-              <Route 
-                path="/signup" 
-                element={<SignUp />} 
-              />
-              <Route
-                path="/About"
-                element={<About />}
-              />
-              <Route
-                path="/Continents"
-                element={<Continents />}
-              />
-              
-            </Routes>
-          </div>
-
-        </div>
-      </Router>
-    </ApolloProvider>
+  <Router>
+    <div>
+      <Header />
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='about' element={<About />} />
+        </Routes>
+      </div>
+    </div>
+  </Router>
+</ApolloProvider>
   );
 }
 

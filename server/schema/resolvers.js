@@ -3,16 +3,19 @@ const { signToken } = require("../utils/auth");
 const { User, Job } = require("../models");
 
 const resolvers = {
-  Query: {},
+  Query: {
+    User: async (parent, args, context) => {
+      const user = await User.findById(context.user._id)
+
+      return user
+    }
+  },
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
-    },
-    addJobs: async (parent, { jobs }, context) => {
-
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
