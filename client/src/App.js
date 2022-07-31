@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   InMemoryCache,
@@ -13,7 +14,6 @@ import Header from "./componets/Header";
 import SignUp from './componets/SignUp';
 import Continents from "./componets/Continents";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
   uri: "/countries.trevorblades.com/",
