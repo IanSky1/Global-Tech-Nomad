@@ -1,44 +1,36 @@
-const mongoose = require("mongoose");
-
-const { Schema } = mongoose;
-const bcrypt = require("bcrypt");
-const savedJobs = require('./Job')
+const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
-    firstName: {
+    username: {
       type: String,
       required: true,
-      trim: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
-      trim: true,
+      unique: true,
+      trim: true
     },
     email: {
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, "Must use a valid email address"],
+      match: [/.+@.+\..+/, 'Must match an email address!']
     },
     password: {
       type: String,
       required: true,
-      min: [5, 'Password is too short'],
-      max:[14, 'Password is too long']
-    },
-    savedJobs: [savedJobs],
+      minlength: 5
+    }
   },
   {
     toJSON: {
-      virtuals: true,
-    },
+      virtuals: true
+    }
   }
 );
 
-userSchema.pre("save", async function (next) {
-  if (this.isNew || this.isModified("password")) {
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -46,10 +38,15 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.methods.isCorrectPassword = async function (password) {
+// compare the incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.model("User", userSchema);
+userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
+
+const User = model('User', userSchema);
 
 module.exports = User;

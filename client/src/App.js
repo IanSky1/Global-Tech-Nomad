@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
 import Home from "./componets/Home";
 import About from "./componets/About";
@@ -16,11 +11,13 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
-  uri: "/countries.trevorblades.com/",
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
+  console.log(headers, 'headers')
+  console.log(token)
   return {
     headers: {
       ...headers,
