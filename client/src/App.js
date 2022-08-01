@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
-import Home from "./componets/Home";
+import HomeMap from './componets/Home/index'
 import About from "./componets/About";
 import Login from "./componets/Login";
 import Header from "./componets/Header";
@@ -40,12 +40,12 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <Continents />
+          <HomeMap />
           <div className="container">
             <Routes>
               <Route 
                 path="/" 
-                element={<Home />} 
+                element={<HomeMap />} 
               />
               <Route 
                 path="/login" 
