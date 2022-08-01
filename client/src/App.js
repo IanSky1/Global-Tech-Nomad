@@ -1,6 +1,7 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomeMap from './componets/Home/index'
 import About from "./componets/About";
 import Login from "./componets/Login";
@@ -8,7 +9,6 @@ import Header from "./componets/Header";
 import SignUp from './componets/SignUp';
 import Continents from "./componets/Continents";
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -40,7 +40,6 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <HomeMap />
           <div className="container">
             <Routes>
               <Route 
@@ -48,11 +47,11 @@ function App() {
                 element={<HomeMap />} 
               />
               <Route 
-                path="/login" 
+                path="/Login" 
                 element={<Login />} 
               />
               <Route 
-                path="/signup" 
+                path="/Signup" 
                 element={<SignUp />} 
               />
               <Route
