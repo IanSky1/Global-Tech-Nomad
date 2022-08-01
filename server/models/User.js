@@ -1,26 +1,21 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 
-const { Schema, model } = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require("bcrypt");
-const savedJobs = require('./Job')
 
 const userSchema = new Schema(
   {
-    firstName: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     email: {
       type: String,
       required: true,
       unique: true,
       match: [/.+@.+\..+/, "Must use a valid email address"],
+    },
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
     },
     password: {
       type: String,
@@ -46,10 +41,14 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-userSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = mongoose.model("User", userSchema);
+// userSchema.virtual('Continents').get(function() {
+//   return this.friends.length;
+// });
+
+const User = model("User", userSchema);
 
 module.exports = User;

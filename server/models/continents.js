@@ -1,6 +1,4 @@
-const mongoose = require("mongoose");
-
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const countrySchema = new Schema(
     {
