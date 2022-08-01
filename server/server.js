@@ -51,4 +51,3 @@ app.get('*', (req, res) => {
 // Call the async fucntion strart the server
 startApolloServer(typeDefs, resolvers);
 
-

@@ -1,7 +1,6 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomeMap from './componets/Home/index'
 import About from "./componets/About";
 import Login from "./componets/Login";
@@ -9,6 +8,7 @@ import Header from "./componets/Header";
 import SignUp from './componets/SignUp';
 import Continents from "./componets/Continents";
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -17,7 +17,7 @@ const httpLink = createHttpLink({
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
   console.log(headers, 'headers')
-  console.log(token)
+  console.log(token, 'token')
   return {
     headers: {
       ...headers,
@@ -47,11 +47,11 @@ function App() {
                 element={<HomeMap />} 
               />
               <Route 
-                path="/Login" 
+                path="/login" 
                 element={<Login />} 
               />
               <Route 
-                path="/Signup" 
+                path="/signup" 
                 element={<SignUp />} 
               />
               <Route
