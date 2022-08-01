@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+const { Schema, model } = require('mongoose');
+const countriesSchema = require('./Countries');
+const dateFormat = require('../utils/dateFormat');
 
-const { Schema } = mongoose;
-
-const countrySchema = new Schema(
+const countriesSchema = new Schema(
     {
 
     }
@@ -13,3 +13,4 @@ const continentsSchema = new Schema(
 
     }
 ); 
+
