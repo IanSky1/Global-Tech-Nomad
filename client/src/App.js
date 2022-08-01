@@ -16,11 +16,13 @@ import Continents from "./components/Continents";
 import './App.css';
 
 const httpLink = createHttpLink({
-  uri: "/countries.trevorblades.com/",
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
+  console.log(headers, 'headers')
+  console.log(token, 'token')
   return {
     headers: {
       ...headers,
@@ -43,12 +45,11 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <Continents />
           <div className="container">
             <Routes>
               <Route 
                 path="/" 
-                element={<Home />} 
+                element={<HomeMap />} 
               />
               <Route 
                 path="/login" 
