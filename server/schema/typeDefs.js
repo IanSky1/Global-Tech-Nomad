@@ -23,7 +23,7 @@ type Auth {
   }
 
   type Query {
-  
+  me: User
 
   }
   type Mutation {
