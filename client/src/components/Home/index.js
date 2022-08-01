@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loade
  
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWFuc2t5MSIsImEiOiJjbDY1eXcxaWcwM24zM2NxYXgxb3k1YzBiIn0.FBPGprlYQep4dgIiIIEzPg';
  
-const HomeMap = () => {
+const Home = () => {
 const mapContainer = useRef(null);
 const map = useRef(null);
 const [lng, setLng] = useState(-70.9);
@@ -39,4 +39,4 @@ Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
 );
 }
 
-export default HomeMap;
+export default Home;

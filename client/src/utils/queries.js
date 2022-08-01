@@ -20,3 +20,6 @@ export const QUERY_COUNTRIES = gql`
     }
   }
 `
+
+// export const QUERY_CONTINENTS = gql`
+// `

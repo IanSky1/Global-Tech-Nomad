@@ -1,12 +1,12 @@
 import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
-import HomeMap from './componets/Home/index'
-import About from "./componets/About";
-import Login from "./componets/Login";
-import Header from "./componets/Header";
-import SignUp from './componets/SignUp';
-import Continents from "./componets/Continents";
+import Home from './components/Home/index'
+import About from "./components/About";
+import Login from "./components/Login";
+import Header from "./components/Header";
+import SignUp from './components/SignUp';
+import Continents from "./components/Continents";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -44,7 +44,7 @@ function App() {
             <Routes>
               <Route 
                 path="/" 
-                element={<HomeMap />} 
+                element={<Home />} 
               />
               <Route 
                 path="/login" 
