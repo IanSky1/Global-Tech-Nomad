@@ -36,4 +36,4 @@ const Login = (props) => {
       email: '',
       password: '',
     });
-  };
+  }};
