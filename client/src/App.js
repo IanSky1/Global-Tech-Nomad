@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
-  ApolloProvider,
   ApolloClient,
   InMemoryCache,
-  createHttpLink
+  ApolloProvider,
+  createHttpLink,
 } from "@apollo/client";
-import { setContext } from "@apollo/client/link/context";
+import { setContext } from '@apollo/client/link/context';
 import Home from "./components/Home";
 import About from "./components/About";
 import Login from "./components/Login";
@@ -16,7 +16,7 @@ import Continents from "./components/Continents";
 import './App.css';
 
 const httpLink = createHttpLink({
-  uri: "/countries.trevorblades.com/",
+  uri: '/countries.trevorblades.com',
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -24,7 +24,7 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : "",
+      authorization: token ? `Bearer ${token}` : '',
     },
   };
 });
@@ -59,11 +59,11 @@ function App() {
                 element={<SignUp />} 
               />
               <Route
-                path="/About"
+                path="/about"
                 element={<About />}
               />
               <Route
-                path="/Continents"
+                path="/continents"
                 element={<Continents />}
               />
               

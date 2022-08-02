@@ -22,8 +22,7 @@ const userSchema = new Schema(
       required: true,
       min: [5, 'Password is too short'],
       max:[14, 'Password is too long']
-    },
-    savedJobs: [savedJobs],
+    }
   },
   {
     toJSON: {

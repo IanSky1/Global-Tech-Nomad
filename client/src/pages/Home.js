@@ -1,7 +1,7 @@
 import React from "react";
 
-import { useQuery } from "@apollo/client";
-import { QUERY_CONTINENTS, QUERY_COUNTRIES } from "../utils/queries";
+import { useQuery } from '@apollo/client';
+import { QUERY_CONTINENTS, QUERY_COUNTRIES } from '../utils/queries';
 import Continents from "../components/Continents";
 import Auth from "../utils/auth";
 
