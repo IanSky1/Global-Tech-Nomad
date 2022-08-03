@@ -17,4 +17,4 @@ const Continents = () => {
     )
 }
 
-export default Continents
+export default Continents;

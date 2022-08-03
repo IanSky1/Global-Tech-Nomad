@@ -2,7 +2,7 @@ import React from "react";
 
 import { useQuery } from '@apollo/client';
 import { QUERY_CONTINENTS, QUERY_COUNTRIES } from '../utils/queries';
-import Continents from "../components/Continents";
+import Continents from "../components/Countries";
 import Auth from "../utils/auth";
 
 const Home = () => {
