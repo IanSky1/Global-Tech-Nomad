@@ -1,44 +1,33 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Auth from '../../utils/auth';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    const logout = event => {
-        event.preventDefault();
-        Auth.logout();
-      };
-    return (
-        <header className="bg-secondary mb-4 py-2 flex-row align-center">
-            <div className="container flex-row justify-space-between-lg justify-center align-center">
-                <Link to="/">
-                    <h1>Global Tech Nomad</h1>
-                </Link>
-           
-                <nav className="text-center">
-                    {Auth.loggedIn() ? (
-                        <>
-                            <Link to="/profile">Me</Link>
-                            <a href="/" onClick={logout}>
-                                Logout
-                            </a>
-                        </>
-                    ) : (
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/signup">Signup</Link>
-                    </>
-                    )}
-                </nav>
-            </div>
-        </header>
-    
-    // <a href="/Home">Home</a>
-    // <a href="/SignUp">Sign Up</a>
-    // <a href="/About">About Us</a>
-    // <a href="/Login">Log In</a>
+  return (
+    <div className="header">
+    <h1>Global Tech Nomad</h1>
+      <nav className="navigation">
+        <Link to='/'>
+            Home
+        </Link>
 
-        
-    );
+        <Link to='Login'>
+            Login
+        </Link>
+
+        <Link to='About'>
+            About
+        </Link>
+
+        <Link to='Signup'>
+            SignUp
+        </Link>
+        <Link to='Continents'>
+            Continents
+        </Link>
+
+      </nav>
+    </div>
+  );
 };
 
 export default Header;

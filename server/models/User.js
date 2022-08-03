@@ -1,15 +1,19 @@
-// const mongoose = require("mongoose");
-
 const { Schema, model } = require('mongoose');
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true
+    },
     email: {
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, "Must use a valid email address"],
+      match: [/.+@.+\..+/, 'Must match an email address!']
     },
     username: {
       type: String,
@@ -20,19 +24,19 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      min: [5, 'Password is too short'],
-      max:[14, 'Password is too long']
+      minlength: 5
     }
   },
   {
     toJSON: {
-      virtuals: true,
-    },
+      virtuals: true
+    }
   }
 );
 
-userSchema.pre("save", async function (next) {
-  if (this.isNew || this.isModified("password")) {
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+  if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -40,14 +44,15 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
+// compare the incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-// userSchema.virtual('Continents').get(function() {
-//   return this.friends.length;
-// });
+userSchema.virtual('friendCount').get(function() {
+  return this.friends.length;
+});
 
-const User = model("User", userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
