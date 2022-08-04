@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { LIST_COUNTRIES} from '../../utils/queries'
 import {ApolloClient, InMemoryCache, useQuery} from '@apollo/client';
+import './style.css';
 
  export let cList = [];
 // initialize a GraphQL client
@@ -27,7 +28,8 @@ function CountrySelect() {
 
 
   return (
-    <ul value={country}>
+    <div className='ulDiv'>
+    <ul value={country} className='listUl'>
       {data.countries.map(country => (
         <a href='/Profile' key={country.code} >
         <li value={country.code} onClick={event => {
@@ -40,6 +42,7 @@ function CountrySelect() {
         </a>
       ))}
     </ul>
+    </div>
   );
 }
  export default CountrySelect

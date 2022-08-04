@@ -1,9 +1,5 @@
 import React from 'react';
-// import { Navigate, useParams } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_ME_BASIC } from '../utils/queries';
-// import Auth from '../utils/auth';
-
+import './style.css'
 
 let list = localStorage.getItem('cList');
 console.log(list, 'list')
@@ -15,21 +11,16 @@ console.log(array,'array');
 
 
 const Profile= () => {
-  // use useQuery hook to make query request
-  // const { data: userData } = useQuery(QUERY_ME_BASIC);
-  // console.log(userData, 'userdata');
 
-
-//   const loggedIn = Auth.loggedIn();
 
   
 
   return (
-    <main>
-      <div className="flex-row justify-space-between">
-        <ul>
+    <main className='profile'>
+      <div className="profileDiv">
+        <ul className='profileUl'>
             {array.map(item => {
-                return <li key={item}>{item}</li>
+                return <li key={item} className='profileLi'>{item}</li>
             })}
         </ul>
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
 import HomeMap from './components/Home/index'
-import About from "./components/About";
 import Login from "./components/Login";
 import Header from "./components/Header";
 import SignUp from './components/SignUp';
@@ -54,10 +53,6 @@ function App() {
               <Route 
                 path="/signup" 
                 element={<SignUp />} 
-              />
-              <Route
-                path="/About"
-                element={<About />}
               />
               <Route
                 path="/Continents"

@@ -1,0 +1,11 @@
+.profile{
+    width: 80%;
+    margin: 0 auto;
+    border: 20px solid blanchedalmond;
+}
+
+.profileLi {
+    font-size: 30px;
+    color: blanchedalmond;
+    list-style: none;
+}
