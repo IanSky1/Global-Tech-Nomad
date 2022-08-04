@@ -9,7 +9,7 @@ A job website for the infomation technologies gurus to search for jobs
 3. Brittney Richardson
 
 ## User Story
-    As A user I want A website for Digital Nomads to 
+    As A user I want A website for Digital Nomads to find jobs
 
 ## Acceptance Criteria
     When users visits the website,
@@ -21,11 +21,8 @@ A job website for the infomation technologies gurus to search for jobs
     When Users interacts with the map, 
     They they can look at different continents, countries, and cities all accorss the world
 
-    When a user click on About us option in the Nav, 
-    Then they are routed to a page about the developers of the web application
-
-    When a user clicks on Profile, 
-    They they are routed to a page where they can view their profile
+    When a user clicks on Contients, 
+    Thn they are routed to a list of different countries all over the worl
 
 ## Installation Instruction on localhost
 `npm install` in the root of the project as well in the client and server folders as well
