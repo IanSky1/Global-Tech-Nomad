@@ -2,11 +2,11 @@ import React from "react";
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from "@apollo/client/link/context";
 import HomeMap from './components/Home/index'
-import About from "./components/About";
 import Login from "./components/Login";
 import Header from "./components/Header";
 import SignUp from './components/SignUp';
-import Continents from "./components/Continents";
+import Countries from "./components/Countries";
+import Profile from "./pages/Profile";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -55,13 +55,14 @@ function App() {
                 element={<SignUp />} 
               />
               <Route
-                path="/about"
-                element={<About />}
+                path="/Countries"
+                element={<Countries />}
               />
               <Route
-                path="/continents"
-                element={<Continents />}
+                path="/Profile"
+                element={<Profile />}
               />
+              
               
             </Routes>
           </div>

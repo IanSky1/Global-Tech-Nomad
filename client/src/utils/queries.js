@@ -9,20 +9,15 @@ export const LIST_COUNTRIES = gql`
 }
 `;
 
-export const COUNTRY = gql`
-{
-  country(code: "BR") {
-    name
-    states{
-      name
-    }
-    continent {
-      code
-      name
+export const QUERY_ME_BASIC = gql`
+  {
+    me {
+      _id
+      username
+      email
     }
   }
-}
-`
+`;
 
 
 

@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import { LIST_COUNTRIES} from '../../utils/queries'
 import {ApolloClient, InMemoryCache, useQuery} from '@apollo/client';
+import './style.css';
 
+ export let cList = [];
 // initialize a GraphQL client
 const client = new ApolloClient({
   cache: new InMemoryCache(),
@@ -10,8 +12,15 @@ const client = new ApolloClient({
 
 // create a component that renders a select input for coutries
 function CountrySelect() {
-  const [country, setCountry] = useState('US');
+  const [country] = useState('US');
   const {data, loading, error} = useQuery(LIST_COUNTRIES, {client});
+
+
+  function addToList(oneCountry) {
+    cList.push(oneCountry)
+    console.log(cList)
+    localStorage.setItem('cList', JSON.stringify(cList)  )
+  }
 
   if (loading || error) {
     return <p>{error ? error.message : 'Loading...'}</p>;
@@ -19,13 +28,21 @@ function CountrySelect() {
 
 
   return (
-    <select value={country} onChange={event => setCountry(event.target.value)}>
+    <div className='ulDiv'>
+    <ul value={country} className='listUl'>
       {data.countries.map(country => (
-        <option key={country.code} value={country.code}>
+        <a href='/Profile' key={country.code} >
+        <li value={country.code} onClick={event => {
+          event.preventDefault();
+          console.log(country.name)
+          addToList(country.name)
+          }}>
           {country.name}
-        </option>
+        </li>
+        </a>
       ))}
-    </select>
+    </ul>
+    </div>
   );
 }
  export default CountrySelect
