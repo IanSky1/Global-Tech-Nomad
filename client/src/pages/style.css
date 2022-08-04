@@ -2,6 +2,10 @@
     width: 80%;
     margin: 0 auto;
     border: 20px solid blanchedalmond;
+    overflow: scroll;
+    min-height: auto;
+    max-height: 500px;
+    background-color: rgba(2 17 48 / 45%);
 }
 
 .profileLi {
