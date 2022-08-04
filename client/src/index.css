@@ -1,0 +1,159 @@
+/* GLOBAL RULE*/
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(./images/map2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* HEADER SECTION*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  font-size: xx-large;
+  color: blanchedalmond;
+  flex-wrap: wrap;
+}
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  align-self: center;
+  flex-wrap: wrap;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: blanchedalmond;
+}
+
+.navigation a:hover {
+  color: aqua;
+}
+
+/* LOGIN COMPONENT */
+
+.login {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginHeader {
+  margin: 20px 0;
+  color: blanchedalmond;
+}
+
+form {
+  text-align: center;
+  background-color: hsla(208deg 100% 48% / 49%);
+  font-size: xx-large;
+  color: blanchedalmond;
+  border: 20px solid blanchedalmond;
+}
+.loginUn{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginUn input{
+  width: 100%;
+  font-size: xx-large;
+}
+
+.loginUn input:hover{
+  width: 100%;
+  background-color: blue;
+  font-size: xx-large;
+}
+
+.loginPw{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.loginPw input{
+  width: 100%;
+  font-size: xx-large;
+}
+
+.loginPw input:hover{
+  width: 100%;
+  background-color: blue;
+  font-size: xx-large;
+}
+
+.loginSubmit button{
+  margin: 20px;
+  padding: 15px;
+  font-size: x-large;
+}
+
+.loginSubmit button:hover{
+  margin: 20px;
+  padding: 15px;
+  font-size: x-large;
+  background-color: blue;
+}
+
+
+
+.map-container {
+  height: 50vw;
+}
+   
+.sidebar {
+  display: none;
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}
+
+
+/*MEDIA TYPES*/
+
+@media screen and (max-width: 906px) {
+
+  .header h1{
+    margin: 0 auto;
+  }
+  .header nav {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+}
+
+@media screen and (max-width: 550px) {
+  .header h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .header h1 {
+    font-size: 35px;
+  }
+}

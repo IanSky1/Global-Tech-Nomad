@@ -1,0 +1,25 @@
+.ulDiv {
+    overflow: scroll;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    height: 500px;
+    border: 20px solid blanchedalmond;
+    background-color: rgba(2 17 48 / 45%);
+}
+
+.listUl {
+    contain: size;
+    list-style: none;
+    font-size: 30px;
+}
+
+ul a {
+    text-decoration: none;
+    color: blanchedalmond;
+    display: flex;
+}
+
+ul a :hover {
+    color: aqua;
+}

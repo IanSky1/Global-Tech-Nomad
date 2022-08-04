@@ -1,0 +1,22 @@
+.parentDiv h2{
+    text-align: center;
+    color: blanchedalmond;
+    font-size: xx-large;
+    margin: 10px 0;
+}
+
+.profile{
+    width: 80%;
+    margin: 0 auto;
+    border: 20px solid blanchedalmond;
+    overflow: scroll;
+    min-height: auto;
+    max-height: 500px;
+    background-color: rgba(2 17 48 / 45%);
+}
+
+.profileLi {
+    font-size: 30px;
+    color: blanchedalmond;
+    list-style: circle;
+}
