@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Header from "./components/Header";
 import SignUp from './components/SignUp';
 import Continents from "./components/Continents";
+import Profile from "./pages/Profile";
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -62,6 +63,11 @@ function App() {
                 path="/Continents"
                 element={<Continents />}
               />
+              <Route
+                path="/Profile"
+                element={<Profile />}
+              />
+              
               
             </Routes>
           </div>
