@@ -1,3 +1,10 @@
+.parentDiv h2{
+    text-align: center;
+    color: blanchedalmond;
+    font-size: xx-large;
+    margin: 10px 0;
+}
+
 .profile{
     width: 80%;
     margin: 0 auto;
@@ -11,5 +18,5 @@
 .profileLi {
     font-size: 30px;
     color: blanchedalmond;
-    list-style: none;
+    list-style: circle;
 }
