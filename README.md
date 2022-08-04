@@ -24,7 +24,7 @@ A job website for the infomation technologies gurus to search for jobs
     When a user click on About us option in the Nav, 
     Then they are routed to a page about the developers of the web application
 
-    when a user clicks on Profile, 
+    When a user clicks on Profile, 
     They they are routed to a page where they can view their profile
 
 ## Installation Instruction on localhost
