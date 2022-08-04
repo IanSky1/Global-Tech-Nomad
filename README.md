@@ -33,11 +33,10 @@ A job website for the infomation technologies gurus to search for jobs
 
 ## Deployed link On Heroku
 
+https://aqueous-earth-09907.herokuapp.com/
 
 ## Tech Stack
 React, CSS, MongoDB with Mongoose, Nodemon, Express.js, GraphQL, Apollo, JSON Web Tokens, mapbox, React Router
-
-## MVP (Minimum Viable Product)
 
 
 ## Picture of Website
