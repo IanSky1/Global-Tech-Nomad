@@ -40,8 +40,9 @@ React, CSS, MongoDB with Mongoose, Nodemon, Express.js, GraphQL, Apollo, JSON We
 ## MVP (Minimum Viable Product)
 
 
-## Animated Gifs/Pictures of Website
+## Picture of Website
 
+<img width="2240" alt="Screen Shot 2022-08-04 at 12 36 28 PM (1)" src="https://user-images.githubusercontent.com/97998857/182959007-04125620-33a8-4083-ac48-a39f8e1dcc65.png">
 
 
 ## Repositories
